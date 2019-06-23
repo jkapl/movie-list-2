@@ -1,7 +1,7 @@
 import React from 'react';
 import VideoList from './VideoList';
 import Search from './Search';
-import UserInput from './UserInput'
+import UserInput from './UserInput';
 
 class App extends React.Component {
   constructor(props) {
@@ -49,7 +49,7 @@ class App extends React.Component {
   render() {
     return (
     <div>
-        <h1>hello world!</h1>
+        <h1>Movie List</h1>
       <div>
         <Search handleSearch={this.handleSearch}/>
       </div>
