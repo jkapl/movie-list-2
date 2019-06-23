@@ -12,7 +12,8 @@ class App extends React.Component {
       {title: 'Hackers'},
       {title: 'The Grey'},
       {title: 'Sunshine'},
-      {title: 'Ex Machina'}
+      {title: 'Ex Machina'},
+      {title: 'Meanish Girls'}
      ]
     };
 
@@ -21,11 +22,16 @@ class App extends React.Component {
 
   handleSearch (query) {
     let videosArr = this.state.videos;
+    let queryLength = query.length;
+    let matches = [];
     for (var i=0; i<videosArr.length; i++) {
-      if (query === videosArr[i].title) {
-        this.setState({videos: [{title: query}]});
-        return;
+      if (query === videosArr[i].title.slice(0,queryLength)) {
+        matches.push({title: videosArr[i].title})
       }
+    }
+    if (matches.length>0) {
+      this.setState({videos: matches});
+      return;
     }
     console.log('not found');
   }
