@@ -7,19 +7,27 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = [
+    this.state = {videos : [
       {title: 'Mean Girls'},
       {title: 'Hackers'},
       {title: 'The Grey'},
       {title: 'Sunshine'},
-      {title: 'Ex Machina'},
-    ];
+      {title: 'Ex Machina'}
+     ]
+    };
 
     this.handleSearch = this.handleSearch.bind(this);
   }
 
-  handleSearch (e) {
-    alert(e);
+  handleSearch (query) {
+    let videosArr = this.state.videos;
+    for (var i=0; i<videosArr.length; i++) {
+      if (query === videosArr[i].title) {
+        this.setState({videos: [{title: query}]});
+        return;
+      }
+    }
+    console.log('not found');
   }
   
 
@@ -28,7 +36,7 @@ class App extends React.Component {
     <div>
         <h1>hello world!</h1>
       <div>
-        <VideoList videos={this.state}/>
+        <VideoList videos={this.state.videos}/>
       </div>
       <div>
         <Search handleSearch={this.handleSearch}/>
