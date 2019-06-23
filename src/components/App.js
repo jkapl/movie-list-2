@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import VideoList from './VideoList';
+import Search from './Search';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,6 +14,12 @@ class App extends React.Component {
       {title: 'Sunshine'},
       {title: 'Ex Machina'},
     ];
+
+    this.handleSearch = this.handleSearch.bind(this);
+  }
+
+  handleSearch (e) {
+    alert(e);
   }
   
 
@@ -22,6 +29,9 @@ class App extends React.Component {
         <h1>hello world!</h1>
       <div>
         <VideoList videos={this.state}/>
+      </div>
+      <div>
+        <Search handleSearch={this.handleSearch}/>
       </div>
     </div>
     )
