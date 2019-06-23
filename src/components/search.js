@@ -1,14 +1,5 @@
 import React from 'react';
 
-//  const Search = (props)=> (
-//   //pass down handleSearch function from app
-//   //grab event target and pass to handleSearch
-//   <form>
-//       <input type='text' name='search'></input>
-//       <input type='submit' value='submit' onClick={(e) => {props.handleSearch(e)}}></input>
-//   </form> 
-// )
-
 class Search extends React.Component {
   constructor(props){
     super(props)
@@ -21,7 +12,6 @@ class Search extends React.Component {
   
   handleChange(event) {
     this.setState({value: event.target.value})
-    console.log(this.state.value);
   }
 
   handleSubmit(event) {
@@ -37,7 +27,7 @@ class Search extends React.Component {
         Search:
         <input type="text" onChange={this.handleChange} value={this.state.value}  />
       </label>
-      <input type='submit' value='Submit' />
+      <input type="submit" value="Submit" />
     </form>
    )
   }
