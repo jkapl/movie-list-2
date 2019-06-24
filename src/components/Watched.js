@@ -1,14 +1,8 @@
 import React from 'react';
 
 const Watched = (props) => {
-  if (!props.watched) {
-    return null
-  }
-  return (
-    <div>
-      <p>watched</p>
-    </div>
-  );
+  let buttonText = !props.watched ? 'to watch' : 'watched';
+  return <span className="button"><button>{buttonText}</button></span>;
 }
 
 export default Watched;

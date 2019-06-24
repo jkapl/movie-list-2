@@ -7,14 +7,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {videos : [
-      // {title: 'Mean Girls'},
-      // {title: 'Hackers'},
-      // {title: 'The Grey'},
-      // {title: 'Sunshine'},
-      // {title: 'Ex Machina'},
-      // {title: 'Meanish Girls'}
-     ]
+    this.state = {
+      videos : []
     };
 
     this.handleSearch = this.handleSearch.bind(this);
@@ -22,24 +16,28 @@ class App extends React.Component {
   }
 
   handleSearch (query) {
-    let videosArr = this.state.videos;
+    let { videos } = this.state;
     let queryLength = query.length;
     let matches = [];
-    for (var i=0; i<videosArr.length; i++) {
-      if (query === videosArr[i].title.slice(0,queryLength)) {
-        matches.push({title: videosArr[i].title})
+    for (let i = 0; i < videos.length; i++) {
+      if (query === videos[i].title.slice(0, queryLength)) {
+        matches.push({
+          title: videos[i].title
+        })
       }
     }
-    if (matches.length>0) {
-      this.setState({videos: matches});
+    if (matches.length > 0) {
+      this.setState({
+        videos: matches
+      });
       return;
     }
     console.log('not found');
   }
 
   handleAddTitle (title) {
-    let newTitle = {title: title}
-    this.setState((state)=> ({
+    let newTitle = { title }
+    this.setState( (state) => ({
       videos: state.videos.concat(newTitle)
     }));
     console.log(this.state.videos)
@@ -48,18 +46,13 @@ class App extends React.Component {
 
   render() {
     return (
-    <div>
-        <h1>Movie List</h1>
-      <div>
-        <Search handleSearch={this.handleSearch}/>
-      </div>
-      <div>
-        <UserInput handleAddTitle={this.handleAddTitle}/>
-      </div>
-      <div>
-        <VideoList videos={this.state.videos}/>
-      </div>
-    </div>
+    <>
+      <h1>Movie List</h1>
+      <hr></hr>
+      <Search handleSearch={this.handleSearch}/>
+      <UserInput handleAddTitle={this.handleAddTitle}/>
+      <VideoList videos={this.state.videos}/>
+    </>
     )
   }
 }

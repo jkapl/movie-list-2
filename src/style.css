@@ -1,0 +1,19 @@
+.video-entry {
+  padding: 10px;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.video-list {
+  max-width: 500px;
+}
+
+.button {
+  float: right;
+}
+
+.title {
+  
+}

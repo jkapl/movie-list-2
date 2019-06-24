@@ -2,9 +2,9 @@ import React from 'react';
 import VideoEntry from './VideoEntry';
 
 const VideoList = (props) => (
-  <div>
+  <div className="video-list">
     <ul>
-    {props.videos.map( (video)=> 
+    { props.videos.map( (video)=> 
       <VideoEntry video={video}/>
     )}
     </ul>

@@ -10,18 +10,19 @@ class VideoEntry extends React.Component {
   }
 
   toggleWatched () {
-    this.setState((state) => ({
+    this.setState( state => ({
       watched: !state.watched
     }));
   }
 
   render () {
     return (
-    <div className="VideoEntry" onClick={this.toggleWatched}>
-      {this.props.video.title}
-      <div>
+    <div className="video-entry" onClick={this.toggleWatched}>
+      <span className="title">
+        {this.props.video.title}
+      </span>
         <Watched watched={this.state.watched}/>
-      </div>
+        <hr></hr>
     </div>
     )
   }
