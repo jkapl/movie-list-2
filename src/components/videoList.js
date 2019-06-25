@@ -4,7 +4,7 @@ import VideoEntry from './VideoEntry';
 class VideoList extends React.Component {
   constructor(props) {
     super(props)  
-    this.state = { watchedTab : true };
+    this.state = { watchedTab : false };
     this.showWatched = this.showWatched.bind(this); 
     this.showNotWatched = this.showNotWatched.bind(this); 
   }  
@@ -25,9 +25,9 @@ class VideoList extends React.Component {
      (
     <div className="video-list">
       <div>
-        <span onClick={this.showWatched}>Watched</span>
-        <span onClick={this.showNotWatched}>To Watch</span>
-        <p>stuff i watched</p>
+        <span onClick={this.showWatched}>Watched   ||</span>
+        <span onClick={this.showNotWatched}>   To Watch</span>
+        <h2>stuff i watched</h2>
       </div>
       <ul>
       { this.props.videos.map( (video)=> { 
@@ -44,9 +44,9 @@ class VideoList extends React.Component {
   (
     <div className="video-list">
       <div>
-        <span onClick={this.showWatched}>Watched</span>
-        <span onClick={this.showNotWatched}>To Watch</span>
-        <p>stuff I haven't watched</p>
+        <span onClick={this.showWatched}>Watched   ||</span>
+        <span onClick={this.showNotWatched}>   To Watch</span>
+        <h2>stuff I haven't watched</h2>
       </div>
       <ul>
       { this.props.videos.map( (video)=> {
