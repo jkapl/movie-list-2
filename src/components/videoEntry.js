@@ -4,8 +4,7 @@ import Watched from './Watched';
 class VideoEntry extends React.Component {
   constructor (props) {
     super(props);
-    this.state = {watched: true};
-
+    this.state = { watched: true };
     this.toggleWatched = this.toggleWatched.bind(this);
   }
 
@@ -13,6 +12,8 @@ class VideoEntry extends React.Component {
     this.setState( state => ({
       watched: !state.watched
     }));
+    const movieToUpdate = this.props.video.title;
+    this.props.handleWatchedToggle(movieToUpdate);
   }
 
   render () {

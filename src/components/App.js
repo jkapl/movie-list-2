@@ -13,6 +13,7 @@ class App extends React.Component {
 
     this.handleSearch = this.handleSearch.bind(this);
     this.handleAddTitle = this.handleAddTitle.bind(this);
+    this.handleWatchedToggle = this.handleWatchedToggle.bind(this);
   }
 
   handleSearch (query) {
@@ -32,7 +33,6 @@ class App extends React.Component {
       });
       return;
     }
-    console.log('not found');
   }
 
   handleAddTitle (title) {
@@ -40,7 +40,16 @@ class App extends React.Component {
     this.setState( (state) => ({
       videos: state.videos.concat(newTitle)
     }));
-    console.log(this.state.videos)
+  }
+
+  handleWatchedToggle (movie) {
+    const state = [...this.state.videos];
+    for (var i = 0; i<state.length; i++) {
+      if (state[i].title === movie) {
+        state[i].watched = !state[i].watched;
+      }
+    }
+    this.setState({videos:state});
   }
   
 
@@ -51,7 +60,8 @@ class App extends React.Component {
       <hr></hr>
       <Search handleSearch={this.handleSearch}/>
       <UserInput handleAddTitle={this.handleAddTitle}/>
-      <VideoList videos={this.state.videos}/>
+      <VideoList videos={this.state.videos} 
+                 handleWatchedToggle={this.handleWatchedToggle}/>
     </>
     )
   }
