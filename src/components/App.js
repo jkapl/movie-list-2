@@ -23,7 +23,8 @@ class App extends React.Component {
     for (let i = 0; i < videos.length; i++) {
       if (query === videos[i].title.slice(0, queryLength)) {
         matches.push({
-          title: videos[i].title
+          title: videos[i].title,
+          watched: videos[i].watched
         })
       }
     }

@@ -8,14 +8,11 @@ body {
 
 .video-list {
   max-width: 500px;
+  padding-left: 15px;
 }
 
 .button {
   float: right;
-}
-
-.title {
-  
 }
 
 .watch-tab {
@@ -28,3 +25,12 @@ body {
   border: solid green 2px;
   background-color: palegreen;
 }
+
+.submit-form {
+  padding: 15px;
+}
+
+.search-form {
+  padding: 15px;
+}
+ 

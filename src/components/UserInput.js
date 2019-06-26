@@ -21,7 +21,7 @@ class UserInput extends React.Component {
   }
   render () {
     return (
-        <form onSubmit={this.handleSubmit}>
+        <form className='submit-form' onSubmit={this.handleSubmit}>
           <label>
             Add movie:
               <input type="text" onChange={this.handleChange} value={this.state.value}></input>
