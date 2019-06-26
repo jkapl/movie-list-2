@@ -27,7 +27,7 @@ class VideoList extends React.Component {
       <div>
         <span className='selected-watch-tab' onClick={this.showWatched}>Watched</span>
         <span className='watch-tab' onClick={this.showNotWatched}>To Watch</span>
-        <h2>stuff i watched</h2>
+        <h2>Stuff I've Watched</h2>
       </div>
       <ul>
       { this.props.videos.map( (video)=> { 
@@ -46,7 +46,7 @@ class VideoList extends React.Component {
       <div>
         <span className='watch-tab' onClick={this.showWatched}>Watched</span>
         <span className='selected-watch-tab' onClick={this.showNotWatched}>To Watch</span>
-        <h2>stuff I haven't watched</h2>
+        <h2>Stuff I haven't watched</h2>
       </div>
       <ul>
       { this.props.videos.map( (video)=> {
