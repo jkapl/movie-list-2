@@ -12,6 +12,7 @@ class VideoEntry extends React.Component {
     this.setState( state => ({
       watched: !state.watched
     }));
+    console.log(this.state.watched);
     const movieToUpdate = this.props.video.title;
     this.props.handleWatchedToggle(movieToUpdate);
   }

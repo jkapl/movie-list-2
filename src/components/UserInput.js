@@ -12,12 +12,10 @@ class UserInput extends React.Component {
 
   handleChange (event) {
     this.setState({value : event.target.value});
-    console.log(this.state.value);
   }
 
   handleSubmit (event) {
     //call props.addTitle with value title 
-    console.log('submitted ' + this.state.value);
     this.props.handleAddTitle(this.state.value);
     event.preventDefault();
   }

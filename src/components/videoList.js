@@ -11,12 +11,12 @@ class VideoList extends React.Component {
 
   showWatched() {
     this.setState({watchedTab:true});
-    console.log(this.state.watchedTab);
+    // console.log(this.state.watchedTab);
   }
 
   showNotWatched() {
     this.setState({watchedTab:false});
-    console.log(this.state.watchedTab);
+    // console.log(this.state.watchedTab);
   }
 
   render () {
@@ -25,8 +25,8 @@ class VideoList extends React.Component {
      (
     <div className="video-list">
       <div>
-        <span onClick={this.showWatched}>Watched   ||</span>
-        <span onClick={this.showNotWatched}>   To Watch</span>
+        <span className='selected-watch-tab' onClick={this.showWatched}>Watched</span>
+        <span className='watch-tab' onClick={this.showNotWatched}>To Watch</span>
         <h2>stuff i watched</h2>
       </div>
       <ul>
@@ -44,8 +44,8 @@ class VideoList extends React.Component {
   (
     <div className="video-list">
       <div>
-        <span onClick={this.showWatched}>Watched   ||</span>
-        <span onClick={this.showNotWatched}>   To Watch</span>
+        <span className='watch-tab' onClick={this.showWatched}>Watched</span>
+        <span className='selected-watch-tab' onClick={this.showNotWatched}>To Watch</span>
         <h2>stuff I haven't watched</h2>
       </div>
       <ul>

@@ -17,3 +17,14 @@ body {
 .title {
   
 }
+
+.watch-tab {
+  padding: 15px;
+  border: solid black 2px;
+}
+
+.selected-watch-tab {
+  padding: 15px;
+  border: solid green 2px;
+  background-color: palegreen;
+}
