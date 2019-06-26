@@ -18,7 +18,7 @@ class Search extends React.Component {
   }
 
   handleSubmit(event) {
-    console.log('submitted ' + this.state.value);
+    console.log('submitted:', this.state.value);
     this.props.handleSearch(this.state.value);
     event.preventDefault();
   }
