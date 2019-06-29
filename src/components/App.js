@@ -2,6 +2,7 @@ import React from 'react';
 import VideoList from './VideoList';
 import Search from './Search';
 import UserInput from './UserInput';
+import API_KEY from '../../config'
 
 class App extends React.Component {
   constructor(props) {
@@ -37,8 +38,17 @@ class App extends React.Component {
   }
 
   handleAddTitle (title) {
-    let newTitle = { title }
-    // https://api.themoviedb.org/3/search/movie?api_key=f0b044cf0270d9dd2b84a8964f53f059&language=en-US&query=braveheart&page=1&include_adult=false
+    let newTitle = { title };
+    $.ajax({
+      url: `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY.API_KEY}&language=en-US&query=${title}&page=1&include_adult=false`,
+      method: 'GET',
+      success: (data) => {
+        console.log(data);
+      },
+      error: () => {
+        console.log('error')
+      }
+    });
     this.setState( (state) => ({
       videos: state.videos.concat(newTitle)
     }));
